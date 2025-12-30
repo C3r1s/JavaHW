@@ -1,4 +1,3 @@
-// src/main/java/com/example/DeleteUserServlet.java
 package com.example;
 
 import jakarta.servlet.ServletException;
