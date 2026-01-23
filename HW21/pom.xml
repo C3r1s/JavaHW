@@ -5,11 +5,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version> <!-- Updated to a stable Spring Boot 3 version -->
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.2.0</version>
+        <relativePath/>
     </parent>
     <groupId>org.blogsite</groupId>
-    <artifactId>hw21</artifactId> <!-- Changed from HW20 to hw20 -->
+    <artifactId>hw21</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>HW20</name>
     <description>HW20</description>
