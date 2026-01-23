@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${post.title}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h1 th:text="${post.title}"></h1>
+            <p class="text-muted">By <span th:text="${post.author.username}"></span> on <span th:text="${#temporals.format(post.createdAt, 'dd-MM-yyyy HH:mm')}"></span></p>
+        </div>
+        <div class="card-body">
+            <img th:if="${post.imageUrl}" th:src="${post.imageUrl}" class="img-fluid mb-3" alt="Post Image">
+            <p class="card-text" th:text="${post.content}"></p>
+        </div>
+        <div class="card-footer">
+            <a th:href="@{/}" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
