@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Product Catalog</title>
+</head>
+<body>
+    <div th:replace="fragments :: header"></div>
+
+    <h1>Product Catalog</h1>
+    <p th:text="${message}"></p>
+
+    <h2>Filter Products</h2>
+    <form action="/" method="get">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" th:value="${param.category}">
+        <label for="minPrice">Min Price:</label>
+        <input type="number" id="minPrice" name="minPrice" step="0.01" th:value="${param.minPrice}">
+        <button type="submit">Filter</button>
+        <a href="/">Clear Filter</a>
+    </form>
+
+    <h2>Available Products</h2>
+    <div th:if="${#lists.isEmpty(products)}">
+        <p>No products found matching your criteria.</p>
+    </div>
+    <div th:unless="${#lists.isEmpty(products)}">
+        <ul>
+            <li th:each="product : ${products}">
+                <a th:href="@{/product/{id}(id=${product.id})}" th:text="${product.name}">Product Name</a>
+                - <span th:text="${product.category}">Category</span>
+                - $<span th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

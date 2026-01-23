@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+
+    <div th:fragment="header">
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/conditional?show=true">Conditional (Show)</a> |
+            <a href="/conditional?show=false">Conditional (Hide)</a> |
+            <a href="/another-page">Another Page</a>
+            <span th:if="${userRole == 'ADMIN'}"> | <a href="/admin-dashboard">Admin Dashboard</a></span>
+            <hr/>
+        </nav>
+    </div>
+
+</body>
+</html>
