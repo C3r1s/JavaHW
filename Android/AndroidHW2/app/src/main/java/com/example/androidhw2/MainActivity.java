@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Initialize UI elements
         editTextNumber1 = findViewById(R.id.editTextNumber1);
         editTextNumber2 = findViewById(R.id.editTextNumber2);
         buttonAdd = findViewById(R.id.buttonAdd);
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         buttonDivide = findViewById(R.id.buttonDivide);
         textViewResult = findViewById(R.id.textViewResult);
 
-        // Set OnClickListeners for the buttons
         buttonAdd.setOnClickListener(v -> calculateAndDisplayResult("+"));
         buttonSubtract.setOnClickListener(v -> calculateAndDisplayResult("-"));
         buttonMultiply.setOnClickListener(v -> calculateAndDisplayResult("*"));
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                     operatorSymbol = "/";
                     break;
             }
-            // Update the result TextView as shown in the image "Result: 7.0 * 8.0 = 56.0"
             textViewResult.setText(String.format("Result: %.1f %s %.1f = %.1f", num1, operatorSymbol, num2, result));
 
         } catch (NumberFormatException e) {
