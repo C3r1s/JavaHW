@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidHW4</string>
+    <string name="would_you_rather_question">Would you rather...</string>
+    <string name="option_1_text">Option 1</string>
+    <string name="option_2_text">Option 2</string>
+    <string name="select_level">Select Level</string>
+    <string-array name="level_options">
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+    </string-array>
+</resources>
